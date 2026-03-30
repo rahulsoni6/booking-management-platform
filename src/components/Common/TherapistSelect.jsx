@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import useBookingStore from '../../store/bookingStore';
 
 export default function TherapistSelect({ value, onChange, className = "" }) {
   const [therapists, setTherapists] = useState([]);

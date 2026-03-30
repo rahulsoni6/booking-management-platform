@@ -16,7 +16,7 @@ export default function BookingSidePanel({ selectedBooking, onClose }) {
   const [error, setError] = useState(null);
   const [showCustomerModal, setShowCustomerModal] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState(null);
-  const [conflictChecked, setConflictChecked] = useState(false);
+  // const [conflictChecked, setConflictChecked] = useState(false);
 
   const createBooking = useBookingStore((state) => state.createBooking);
   const updateBooking = useBookingStore((state) => state.updateBooking);
@@ -327,7 +327,7 @@ export default function BookingSidePanel({ selectedBooking, onClose }) {
               setValue('startTime', resolvedTime.toISOString());
               setValue('therapist', resolvedData.items[0].therapist);
               setValue('room', resolvedData.items[0].room_id);
-              setConflictChecked(false);
+              // setConflictChecked(false);
             }}
           />
         )}

@@ -1,4 +1,4 @@
-import * as bookingApi from "../api/bookingApi";
+// import * as bookingApi from "../api/bookingApi";
 import logger from "./loggerService";
 
 class ConflictService {
