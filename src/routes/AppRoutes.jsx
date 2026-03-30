@@ -2,16 +2,22 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 
-function AppRoutes() {
+// Optional: PrivateRoute wrapper for protected routes
+const PrivateRoute = ({ children }) => {
   const isAuthenticated = Boolean(localStorage.getItem("token"));
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
+};
 
+function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
           element={
-            isAuthenticated ? <Dashboard /> : <Navigate to="/login" replace />
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
           }
         />
         <Route path="/login" element={<Login />} />
